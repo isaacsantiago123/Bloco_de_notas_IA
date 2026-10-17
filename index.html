@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu planejamento diário</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="cabecalho">
+      <p class="etiqueta">MEU PLANEJAMENTO</p>
+      <h1>Bloco de notas diário</h1>
+      <p class="subtitulo">Organize seu dia, uma tarefa de cada vez.</p>
+    </header>
+
+    <section class="painel">
+      <label for="tituloDia">Título do dia</label>
+      <input id="tituloDia" type="text" placeholder="Ex.: Segunda-feira">
+
+      <div class="nova-tarefa">
+        <div class="campo-tarefa">
+          <label for="textoTarefa">O que você precisa fazer?</label>
+          <input id="textoTarefa" type="text" placeholder="Ex.: Acordar mais cedo">
+        </div>
+        <div class="campo-periodo">
+          <label for="periodo">Período</label>
+          <select id="periodo">
+            <option value="manha">Manhã</option>
+            <option value="tarde">Tarde</option>
+            <option value="noite">Noite</option>
+          </select>
+        </div>
+        <button id="adicionarTarefa" type="button">+ Adicionar tarefa</button>
+      </div>
+    </section>
+
+    <section class="resumo" aria-live="polite">
+      <span id="contador">0 de 0 tarefas concluídas</span>
+      <div class="barra"><div id="progresso"></div></div>
+    </section>
+
+    <section class="periodos">
+      <article class="periodo-card" data-periodo="manha">
+        <div class="periodo-titulo"><span class="icone">☀</span><div><h2>Manhã</h2><p>Comece o dia</p></div></div>
+        <ul class="lista-tarefas" id="lista-manha"></ul>
+        <p class="vazio" id="vazio-manha">Nenhuma tarefa por enquanto.</p>
+      </article>
+      <article class="periodo-card" data-periodo="tarde">
+        <div class="periodo-titulo"><span class="icone">☼</span><div><h2>Tarde</h2><p>Dê continuidade ao dia</p></div></div>
+        <ul class="lista-tarefas" id="lista-tarde"></ul>
+        <p class="vazio" id="vazio-tarde">Nenhuma tarefa por enquanto.</p>
+      </article>
+      <article class="periodo-card" data-periodo="noite">
+        <div class="periodo-titulo"><span class="icone">☾</span><div><h2>Noite</h2><p>Encerre o dia</p></div></div>
+        <ul class="lista-tarefas" id="lista-noite"></ul>
+        <p class="vazio" id="vazio-noite">Nenhuma tarefa por enquanto.</p>
+      </article>
+    </section>
+
+    <footer>
+      <button id="limparConcluidas" class="botao-secundario" type="button">Remover concluídas</button>
+      <button id="limparTudo" class="botao-perigo" type="button">Limpar tarefas</button>
+      <p>As tarefas são salvas neste navegador.</p>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

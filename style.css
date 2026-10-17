@@ -1,0 +1,276 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --fundo: #f4f6fb;
+  --cartao: #ffffff;
+  --texto: #20283a;
+  --texto-suave: #737d90;
+  --borda: #e2e7f0;
+  --destaque: #4d65d8;
+  --destaque-claro: #eef0ff;
+}
+
+body {
+  margin: 0;
+  padding: 28px 16px;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.app {
+  width: min(100%, 850px);
+  margin: 0 auto;
+}
+
+.cabecalho {
+  margin-bottom: 24px;
+}
+
+.etiqueta {
+  color: var(--destaque);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+h1 {
+  margin: 8px 0;
+  font-size: clamp(27px, 5vw, 38px);
+}
+
+.subtitulo {
+  margin: 0;
+  color: var(--texto-suave);
+}
+
+.painel, .periodo-card, .resumo {
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+}
+
+.painel {
+  padding: 22px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+input, select {
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 12px;
+  border: 1px solid var(--borda);
+  border-radius: 9px;
+  background: #fff;
+  color: var(--texto);
+  font: inherit;
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: var(--destaque);
+  box-shadow: 0 0 0 3px #4d65d81c;
+}
+
+.nova-tarefa {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 150px auto;
+  align-items: end;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+button {
+  min-height: 44px;
+  padding: 10px 15px;
+  border: 0;
+  border-radius: 9px;
+  background: var(--destaque);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.resumo {
+  margin: 18px 0;
+  padding: 16px 18px;
+  color: var(--texto-suave);
+  font-size: 13px;
+}
+
+.barra {
+  height: 7px;
+  margin-top: 10px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #e9ecf5;
+}
+
+#progresso {
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--destaque);
+  transition: width 0.2s ease;
+}
+
+.periodos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.periodo-card {
+  padding: 20px;
+}
+
+.periodo-titulo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--borda);
+}
+
+.icone {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--destaque-claro);
+  color: var(--destaque);
+  font-size: 24px;
+}
+
+h2 {
+  margin: 0 0 4px;
+  font-size: 19px;
+}
+
+.periodo-titulo p, .vazio {
+  margin: 0;
+  color: var(--texto-suave);
+  font-size: 13px;
+}
+
+.lista-tarefas {
+  display: grid;
+  gap: 9px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tarefa {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 12px;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+}
+
+.tarefa input[type="checkbox"] {
+  width: 18px;
+  min-height: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--destaque);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.texto-tarefa {
+  flex: 1;
+  overflow-wrap: anywhere;
+  line-height: 1.4;
+}
+
+.tarefa.concluida .texto-tarefa {
+  color: #9299a8;
+  text-decoration: line-through;
+}
+
+.excluir {
+  min-height: auto;
+  padding: 5px 8px;
+  background: transparent;
+  color: #8b93a4;
+  font-size: 18px;
+}
+
+.excluir:hover {
+  background: #fff0f0;
+  color: #c23e4b;
+}
+
+.vazio {
+  padding: 16px 0 2px;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.botao-secundario, .botao-perigo {
+  background: #e9ecf5;
+  color: var(--texto);
+  font-size: 13px;
+}
+
+.botao-perigo {
+  background: #fff0f0;
+  color: #a52d3a;
+}
+
+footer p {
+  flex-basis: 100%;
+  margin: 2px 0;
+  color: var(--texto-suave);
+  font-size: 12px;
+}
+
+@media (max-width: 620px) {
+  body {
+    padding: 20px 12px;
+  }
+
+  .painel, .periodo-card {
+    padding: 16px;
+  }
+
+  .nova-tarefa {
+    grid-template-columns: 1fr;
+  }
+
+  .campo-periodo {
+    max-width: none;
+  }
+
+  #adicionarTarefa {
+    width: 100%;
+  }
+}
